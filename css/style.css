@@ -1,0 +1,255 @@
+/* Algemene reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Autorich Sans';
+    src: local('Autorich Sans Regular'), local('Autorich-Sans-Regular'),
+        url('../fonts/AutorichSans.woff2') format('woff2'),
+        url('../fonts/AutorichSans.woff') format('woff'),
+        url('../fonts/AutorichSans.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+
+/* Stijlen voor de header */
+.header-icon {
+    width: 20vw;
+    height: auto;
+    margin-top: 1vh;
+}
+
+#header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    margin-left: 0;
+}
+
+#header-nav a {
+    font-family: 'Autorich Sans', sans-serif; /* Gebruik Autorich Sans voor de navigatie in de header */
+    text-decoration: none;
+    background: linear-gradient(45deg, #fbc8d4, #DCADE3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-size: 1.2rem; /* Vergroot de tekst van de navigatie */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#header-nav a:hover {
+    color: black;
+    -webkit-text-fill-color: black;
+}
+
+/* Stijlen voor de footer */
+#footer {
+    height: 20vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Plaats items aan de uiterste randen */
+    padding-left: 2rem; /* Ruimte vanaf de linkerkant van de footer */
+    padding-right: 2rem; /* Ruimte vanaf de rechterkant van de footer */
+}
+
+#footer-nav {
+    display: flex;
+    align-items: center; /* Centreer verticaal in de footer */
+    gap: 2rem; /* Afstand tussen navigatie en LinkedIn-icoon */
+}
+
+#footer-nav a {
+    font-family: 'Autorich Sans', sans-serif; /* Gebruik Autorich Sans voor de navigatie in de footer */
+    text-decoration: none;
+    background: linear-gradient(45deg, #fbc8d4, #DCADE3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-size: 1.2rem; /* Vergroot de tekst van de navigatie */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#footer-nav a:hover {
+    color: black;
+    -webkit-text-fill-color: black;
+}
+
+.linkedin {
+    width: 50px; /* Maak het LinkedIn-icoon kleiner */
+    height: 50px; /* Maak het LinkedIn-icoon kleiner */
+    margin-left: auto; /* Plaats het icoon helemaal rechts */
+}
+
+/* Algemene stijlen */
+main {
+    background-color: #fbc8d4;
+    height: 170vh;
+}
+
+.home-nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#nav-tekst {
+    display: flex;
+    font-family: 'Autorich Sans', sans-serif;
+    gap: 2rem;
+}
+
+h1 {
+    font-family: 'Autorich Sans', sans-serif;
+}
+
+p {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.2rem;
+}
+
+.main-slideshow-container {
+    position: relative;
+    width: 100%;
+    max-height: 350px;
+    overflow: hidden;
+}
+
+.main-slideshow {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+
+.slideshow1 {
+    opacity: 0;
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    z-index: 1; /* Ensure the images have a lower z-index than the text */
+}
+
+.slideshow1.active {
+    opacity: 1;
+}
+
+.slideshow-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2; /* Ensure the text has a higher z-index than the images */
+}
+
+.slideshow-text {
+    color: #fbc8d4; /* Maakt de tekst roze */
+    font-size: 3rem; /* Vergroot de tekst */
+    font-family: 'Julius Sans One', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.static-text {
+    position: absolute;
+    top: 40px; /* Aanpassen naar wens */
+    left: 52px; /* Aanpassen naar wens */
+    color: #fbc8d4;
+    font-size: 1.5rem;
+    font-family: 'Julius Sans One', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2; /* Ensure the static text has a higher z-index than the images */
+}
+
+.main-content {
+    margin-top: 4vh;
+    padding: 1rem;
+    margin-left: 15vw;
+    width: 80vw;
+}
+
+.main-text {
+    width: 60%;
+}
+
+.tegels {
+    height: 35vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    background-color: white;
+    padding: 1rem;
+}
+
+.tegel {
+    margin-left: 5vw;
+    width: 20vw;
+}
+
+@media (max-width: 768px) {
+    .header-icon {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+    }
+
+    #header-nav, #footer-nav {
+        padding-top: 3rem;
+    }
+
+    .home-nav {
+        padding-top: 1rem;
+    }
+
+    #nav-tekst {
+        gap: 1rem;
+    }
+
+    .main-slideshow {
+        height: 200px;
+    }
+
+    .main-content {
+        padding: 0.5rem;
+    }
+
+    .main-text {
+        width: 80%;
+    }
+
+    .slideshow-text-container {
+        width: 100%;
+        padding-left: 0;
+        position: absolute;
+        bottom: 10%;
+        text-align: center;
+    }
+
+    .tegels {
+        grid-template-columns: 1fr;
+    }
+
+    .static-text {
+        font-size: 1rem;
+        top: 5px;
+        left: 5px;
+    }
+
+    .linkedin {
+        width: 20px; /* Maak het LinkedIn-icoon kleiner voor kleinere schermen */
+        height: 20px; /* Maak het LinkedIn-icoon kleiner voor kleinere schermen */
+        margin-left: auto; /* Plaats het icoon helemaal rechts */
+    }
+}
